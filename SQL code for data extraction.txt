@@ -1,0 +1,17 @@
+WITH t1 AS(
+SELECT distinct(loanId), MIN(dueDate) AS Firstdate
+FROM `propane-highway-202915.arise.ChallengeRepaymentsInfo`
+GROUP BY 1),
+t2 AS (
+SELECT *  
+FROM `propane-highway-202915.arise.ChallengeRepaymentsInfo` Loan
+JOIN t1
+USING (loanId)
+WHERE t1.Firstdate = Loan.dueDate)
+SELECT CL.* , t2.paymentRatio AS firstPaymentRatio,
+CASE WHEN t2.settleDays > 7 or t2.settleDays is null then 1 else 0 end as Firstpayment,
+CASE WHEN timestamp_diff(CL.paidAT,CL.duedate, Day) > 7 or timestamp_diff(CL.paidAT,CL.duedate, Day) is null then 1 else 0 end as loanDefault
+FROM t2
+JOIN `propane-highway-202915.arise.ChallengeLoanInfo` CL
+USING (loanID)
+WHERE payout_status = 'SUCCESS' AND LoanTerm IN (60,90,180) AND LoanType = 'paylater'
