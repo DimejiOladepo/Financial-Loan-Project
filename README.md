@@ -10,7 +10,7 @@ A random forest classifier and a neural network were built with both models trai
 
 The models were also compared. 
 
-The data that was used for training and testing the models were transformed and manipulated to wrangle the data correctly and was exported to SuperQuery and subsequently extracted where pre-processing and EDA was performed.
+The data used for training and testing the models were transformed and manipulated. It was subsequently extracted for pre-processing and EDA was performed.
 
 The features and Target were derived after which models were built. 
 
