@@ -1,4 +1,4 @@
-# Financial-Loan-Project
+# Pre-deliquency Loan Model
 
 This dataset was wrangled using Bigquery to develop two loan pre-delinquency models and comprehensively juxtapose the two models.
 
