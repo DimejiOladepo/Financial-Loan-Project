@@ -1,6 +1,6 @@
 # Pre-deliquency Loan Model
 
-This dataset was wrangled using Bigquery to develop two loan pre-delinquency models and comprehensively juxtapose the two models.
+This dataset was wrangled using Bigquery to develop two loan pre-delinquency models and comprehensively juxtapose these two models.
 
 A pre-delinquency model is a model that is triggered after a loan is disbursed. 
 
